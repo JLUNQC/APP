@@ -1,0 +1,108 @@
+JLUNQC TV - App para Android TV (Kalley 75") y cualquier Android
+================================================================
+
+QUÉ HACE
+- Abre tu servidor multimedia JLUNQC a pantalla completa, sin barras de
+  navegador, con video acelerado por hardware.
+- Activa solo el modo TV del servidor: letras grandes y manejo con flechas.
+- Encuentra el servidor solo: busca en tu red (Wi-Fi o cable) y se conecta.
+  Si el PC cambia de IP, lo vuelve a encontrar sin que hagas nada.
+- Si el servidor está apagado, muestra "Sin conexión" y reintenta cada 5 s.
+- Control remoto:
+    Atrás ........ cierra el reproductor o menú, o vuelve a la pantalla anterior
+                   (dos veces seguidas en el inicio = salir)
+    Play/Pausa ... pausa o reanuda el video o la música
+    Adelantar / Retroceder ... ±10 segundos
+    Menú ......... abre la pantalla para cambiar de servidor
+- La pantalla no se apaga mientras algo se reproduce, y sí cuando no.
+- Aparece en la fila de apps del TV con su propio banner.
+- También se instala en celulares y tablets Android 5.0 o superior.
+
+
+PASO 1 · CONVERTIR ESTE PROYECTO EN APK (gratis, en la nube, ~5 min)
+--------------------------------------------------------------------
+Opción A: GitHub, sin instalar nada (la recomendada)
+ 1. Entra a https://github.com y crea una cuenta gratis (o inicia sesión).
+ 2. Arriba a la derecha: "+" > "New repository". Nombre: jlunqc-tv.
+    Puede ser Private. Dale "Create repository".
+ 3. En la página del repositorio, toca "uploading an existing file".
+    Arrastra TODO el contenido de esta carpeta (incluida la carpeta .github)
+    y dale "Commit changes".
+ 4. Ve a la pestaña "Actions". Se ejecuta solo "Compilar APK" (si te pide
+    habilitar Actions, acepta y dale "Run workflow").
+ 5. Cuando quede en verde (3 a 5 minutos), entra a la ejecución y abajo, en
+    "Artifacts", descarga "JLUNQC-TV". Es un .zip con JLUNQC-TV.apk adentro.
+
+ Si la carpeta .github no se subió (en algunos equipos no se ve), en
+ Actions toca "set up a workflow yourself", pega el contenido del archivo
+ .github/workflows/compilar-apk.yml y guarda.
+
+Opción B: Android Studio en tu PC
+ Abre esta carpeta con Android Studio > Build > Build App Bundle(s)/APK(s)
+ > Build APK(s). Queda en app/build/outputs/apk/.
+
+
+PASO 2 · INSTALARLA EN EL KALLEY
+--------------------------------
+ 1. En el TV: Ajustes > Sistema (o Preferencias del dispositivo) > Información.
+    Baja hasta "Compilación" y presiónalo 7 veces hasta que diga que ya
+    eres desarrollador.
+ 2. Pasa el APK al TV. Cualquiera de estas opciones sirve:
+    - Memoria USB: copia JLUNQC-TV.apk, conéctala al TV y ábrela con un
+      explorador de archivos (por ejemplo "File Commander" o "X-plore",
+      gratis en Google Play del TV).
+    - App "Send Files to TV": instálala en el celular y en el TV y envía
+      el APK.
+ 3. Al abrir el APK, el TV pide permiso para instalar apps desconocidas
+    desde ese explorador: dale Permitir y luego Instalar.
+ 4. Abre JLUNQC desde la fila de apps. La primera vez busca el servidor
+    solo; si no lo encuentra, escribe la dirección que muestra la ventana
+    del servidor (ej. 192.168.20.133:8000).
+
+ Consejo: en Google Play del TV actualiza "Android System WebView" (o
+ "Google Chrome"). Es el motor que usa la app y con la versión más nueva
+ todo se mueve más fluido.
+
+
+NOVEDADES 1.4
+ - Conexión directa: en la pantalla de servidor hay dos botones grandes,
+   🏠 Casa (casa.jlunqc-app.online) y 🎓 SENA (sena.jlunqc-app.online),
+   que dicen si están en línea. La primera vez, si solo uno está prendido,
+   entra solo.
+ - Isla flotante de música (estilo iPhone): al salir de la app con música
+   sonando aparece arriba una píldora negra con la carátula y unas ondas
+   que se mueven. Tócala y se expande con carátula grande, barra de tiempo
+   y anterior / pausa / siguiente. Se puede arrastrar; tocar fuera la
+   cierra a píldora y la X la esconde. La primera vez que suena música la
+   app pregunta si la activas (Android pide "Mostrar sobre otras apps").
+   Se activa o desactiva en la pantalla de servidor (tecla Menú o Atrás >
+   Cambiar servidor).
+ - Video en miniatura flotante: si sales de la app mientras ves una
+   película o serie, sigue en una ventanita que puedes mover, con
+   retroceder 10 s / pausa / adelantar 10 s. Tócala para volver a pantalla
+   completa; al cerrarla el video se pausa. (Android 8 o superior.)
+
+NOVEDADES 1.3 (con el servidor JLUNQC 8)
+ - Música en segundo plano como Spotify: al salir de la app o apagar la
+   pantalla sigue sonando y pasa sola a la siguiente canción.
+ - Notificación con carátula y botones anterior / pausa / siguiente, en
+   la pantalla bloqueada y con los botones de audífonos Bluetooth.
+   (La primera vez Android pregunta si permites notificaciones: dale
+   Permitir.)
+ - La pantalla solo se queda encendida con videos, no con música.
+
+USARLA DESDE CUALQUIER LADO (datos o otro Wi-Fi) · versión 1.2
+ - Abre la app, pega el dominio de Cloudflare (si lo copiaste antes, se
+   pega solo) y toca Conectar. Sale el login del servidor: pon tu clave y
+   la sesión queda guardada.
+ - Cuando el dominio cambie, la app muestra "Sin conexión" con el botón
+   «Cambiar servidor». También: Atrás en la pantalla principal abre un
+   menú con Cambiar servidor / Recargar / Salir (en el TV también sirve
+   la tecla Menú).
+ - En «Usados recientemente» quedan tus direcciones: en casa toca la IP
+   local (más rápida) y afuera el dominio.
+
+ACTUALIZACIONES
+ Todas las versiones van firmadas con la misma llave (app/jlunqc.keystore),
+ así que un APK nuevo se instala encima sin borrar nada. No borres ni
+ cambies esa llave.

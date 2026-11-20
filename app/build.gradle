@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'co.jlunqc.tv'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'co.jlunqc.tv'
+        minSdk 21
+        targetSdk 34
+        versionCode 5
+        versionName '1.4'
+    }
+
+    // Firma fija: así cada APK nuevo se instala ENCIMA del anterior sin desinstalar.
+    signingConfigs {
+        jlunqc {
+            storeFile file('jlunqc.keystore')
+            storePassword 'jlunqc2026'
+            keyAlias 'jlunqc'
+            keyPassword 'jlunqc2026'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.jlunqc
+        }
+        debug {
+            signingConfig signingConfigs.jlunqc
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
